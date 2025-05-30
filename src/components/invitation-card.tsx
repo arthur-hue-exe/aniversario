@@ -1,3 +1,4 @@
+
 "use client";
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -24,7 +25,7 @@ export default function InvitationCard() {
         </h2>
         <div className="font-body text-lg md:text-xl text-foreground/90 space-y-2">
           <p>
-            <strong>Data:</strong> Sábado, 31 de Maio de 2024
+            <strong>Data:</strong> Sábado, 31 de Maio de 2025
           </p>
           <p>
             <strong>Horário:</strong> 19:00 em diante
