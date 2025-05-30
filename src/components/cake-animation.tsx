@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useEffect, useState } from 'react';
@@ -40,7 +41,7 @@ export default function CakeAnimation() {
   }
 
   return (
-    <div className="relative w-48 h-48 md:w-60 md:h-60 mt-8 md:mt-12 animate__animated animate__zoomIn">
+    <div className="relative block mx-auto w-48 h-48 md:w-60 md:h-60 mt-8 md:mt-12 animate__animated animate__zoomIn">
       {/* Cake Base */}
       {currentStep > 0 && (
         <div
