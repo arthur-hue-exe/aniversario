@@ -4,9 +4,7 @@
 import { useEffect, useState } from 'react';
 
 const candleHorizontalPositions = [
-  { leftClass: 'left-[35%]' },
-  { leftClass: 'left-1/2 -translate-x-1/2' },
-  { leftClass: 'right-[35%]' },
+  { leftClass: 'left-1/2 -translate-x-1/2' }, // Single candle in the center
 ];
 
 const NUM_CAKE_LAYERS = 3; // Base, Layer1, Frosting
