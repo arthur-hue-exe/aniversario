@@ -35,9 +35,10 @@ export default function InvitationCard() {
           </p>
         </div>
         <p className="font-body text-md md:text-lg text-accent-foreground italic pt-2">
-          Prepare-se para uma noite de diversão, risadas e bons momentos!
+          Churrasco do kilo
         </p>
       </CardContent>
     </Card>
   );
 }
+
