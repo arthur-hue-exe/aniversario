@@ -10,8 +10,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        body: ['Inter', 'sans-serif'],
-        headline: ['Inter', 'sans-serif'],
+        body: ['PT Sans', 'sans-serif'],
+        headline: ['Playfair Display', 'serif'],
         code: ['monospace'],
       },
       colors: {
@@ -88,10 +88,36 @@ export default {
             height: '0',
           },
         },
+        gradientAnimation: { // Added from globals.css for completeness if needed directly in tailwind
+          '0%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+          '100%': { backgroundPosition: '0% 50%' },
+        },
+        rise: { // Added from globals.css
+          '0%': { transform: 'translateY(0) translateX(0) rotate(0deg)', opacity: '1' },
+          '25%': { transform: 'translateY(-25vh) translateX(5vw) rotate(-5deg)' },
+          '50%': { transform: 'translateY(-50vh) translateX(-5vw) rotate(5deg)' },
+          '75%': { transform: 'translateY(-75vh) translateX(3vw) rotate(-3deg)' },
+          '100%': { transform: 'translateY(-110vh) translateX(0) rotate(0deg)', opacity: '0'},
+        },
+        flicker: { // Added from globals.css
+          '0%': { transform: 'scaleY(1) scaleX(1) translateY(0)', opacity: '1' },
+          '50%': { transform: 'scaleY(0.95) scaleX(1.05) translateY(-2px)', opacity: '0.85' },
+          '100%': { transform: 'scaleY(1.05) scaleX(0.95) translateY(0)', opacity: '1' },
+        },
+        'flicker-inner': { // Added from globals.css
+          '0%': { transform: 'scaleY(1) scaleX(1)', opacity: '0.7' },
+          '50%': { transform: 'scaleY(0.9) scaleX(1.1)', opacity: '0.5' },
+          '100%': { transform: 'scaleY(1.1) scaleX(0.9)', opacity: '0.7' },
+        }
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        'gradient-bg': 'gradientAnimation 20s ease infinite',
+        'balloon-rise': 'rise linear infinite', // Custom name for balloon animation
+        'flame-flicker': 'flicker 0.3s infinite alternate',
+        'flame-flicker-inner': 'flicker-inner 0.35s infinite alternate',
       },
     },
   },
