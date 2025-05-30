@@ -4,7 +4,9 @@
 import { useEffect, useState } from 'react';
 
 const candleHorizontalPositions = [
-  { leftClass: 'left-[calc(50%+92px)] -translate-x-1/2' }, // Single candle, shifted 92px right from center
+  { leftClass: 'left-[calc(50%+79px)] -translate-x-1/2' }, // Left candle
+  { leftClass: 'left-[calc(50%+92px)] -translate-x-1/2' }, // Middle candle (original)
+  { leftClass: 'left-[calc(50%+105px)] -translate-x-1/2' }, // Right candle
 ];
 
 const NUM_CAKE_LAYERS = 3; // Base, Layer1, Frosting
@@ -81,4 +83,3 @@ export default function CakeAnimation() {
     </div>
   );
 }
-
