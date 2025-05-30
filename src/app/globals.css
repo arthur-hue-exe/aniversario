@@ -175,7 +175,7 @@ body {
   left: 50%;
   transform: translateX(-50%);
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  margin: 48px 0 0; /* Centering handled by left/transform, removed 216px horizontal margins */
+  margin: 48px 0 0;
 }
 
 .cake-layer1 {
@@ -189,7 +189,7 @@ body {
   left: 50%;
   transform: translateX(-50%);
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  margin: 48px 0 0; /* Centering handled by left/transform, removed 216px horizontal margins */
+  margin: 48px 0 0;
 }
 
 .cake-frosting {
@@ -199,11 +199,11 @@ body {
   border: 2px solid hsl(var(--foreground));
   border-radius: 6px 6px 10px 10px; /* Slightly more rounded top for frosting */
   position: absolute;
-  bottom: 111px; /* Adjusted: base_h(64) + layer1_h(48) - 1px_gap = 111px */
+  bottom: 112px; /* Aligns top of frosting (112+40=152px) with candle bottom (152px) */
   left: 50%;
   transform: translateX(-50%);
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  margin: 48px 0 0; /* Centering handled by left/transform, removed 216px horizontal margins */
+  margin: 48px 0 0;
 }
 
 @media (min-width: 768px) { /* md breakpoint */
@@ -221,7 +221,7 @@ body {
   .cake-frosting {
     width: 224px; /* w-56 equivalent, same as base */
     height: 56px; /* h-14 equivalent */
-    bottom: 143px; /* Adjusted: md_base_h(80) + md_layer1_h(64) - 1px_gap = 143px */
+    bottom: 144px; /* Aligns top of frosting (144+56=200px) with candle bottom (md 200px) */
     margin: 48px 0 0;
   }
 }
