@@ -12,8 +12,8 @@ export default function RsvpButton() {
   }, []);
 
   const handleRsvp = () => {
-    const phoneNumber = "+1234567890"; // Replace with actual WhatsApp number
-    const message = encodeURIComponent("I'd love to come to Weverson's birthday!");
+    const phoneNumber = "+1234567890"; // Substitua pelo número real do WhatsApp
+    const message = encodeURIComponent("Adoraria ir ao aniversário do Weverson!");
     window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
   };
 
@@ -25,7 +25,7 @@ export default function RsvpButton() {
       variant="default"
     >
       <Gift className="mr-2 h-6 w-6" />
-      Confirm Attendance
+      Confirmar Presença
     </Button>
   );
 }

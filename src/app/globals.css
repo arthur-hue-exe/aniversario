@@ -162,3 +162,60 @@ body {
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
+
+/* CSS Cake Styles */
+.cake-base {
+  width: 176px; /* w-44 equivalent */
+  height: 64px; /* h-16 equivalent */
+  background-color: hsl(var(--card));
+  border: 2px solid hsl(var(--foreground));
+  border-radius: 4px 4px 0 0;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.cake-layer1 {
+  width: 160px; /* w-40 equivalent */
+  height: 48px; /* h-12 equivalent */
+  background-color: hsl(var(--accent));
+  border: 2px solid hsl(var(--foreground));
+  border-radius: 4px 4px 0 0;
+  position: absolute;
+  bottom: 64px; /* Height of cake-base */
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.cake-frosting {
+  width: 144px; /* w-36 equivalent */
+  height: 40px; /* h-10 equivalent */
+  background-color: hsl(var(--primary));
+  border: 2px solid hsl(var(--foreground));
+  border-radius: 6px 6px 10px 10px; /* Slightly more rounded top for frosting */
+  position: absolute;
+  bottom: 112px; /* Height of cake-base + cake-layer1 */
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+@media (min-width: 768px) { /* md breakpoint */
+  .cake-base {
+    width: 224px; /* w-56 equivalent */
+    height: 80px; /* h-20 equivalent */
+  }
+  .cake-layer1 {
+    width: 208px; /* w-52 equivalent */
+    height: 64px; /* h-16 equivalent */
+    bottom: 80px; /* md: Height of cake-base */
+  }
+  .cake-frosting {
+    width: 192px; /* w-48 equivalent */
+    height: 56px; /* h-14 equivalent */
+    bottom: 144px; /* md: Height of cake-base + cake-layer1 */
+  }
+}
