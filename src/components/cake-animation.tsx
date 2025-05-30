@@ -4,9 +4,9 @@
 import { useEffect, useState } from 'react';
 
 const candleHorizontalPositions = [
-  { leftClass: 'left-[calc(50%+79px)] -translate-x-1/2' }, // Left candle
-  { leftClass: 'left-[calc(50%+92px)] -translate-x-1/2' }, // Middle candle (original)
-  { leftClass: 'left-[calc(50%+105px)] -translate-x-1/2' }, // Right candle
+  { leftClass: 'left-[calc(50%+86px)] -translate-x-1/2' }, // Adjusted: 79px + 7px
+  { leftClass: 'left-[calc(50%+99px)] -translate-x-1/2' }, // Adjusted: 92px + 7px
+  { leftClass: 'left-[calc(50%+112px)] -translate-x-1/2' }, // Adjusted: 105px + 7px
 ];
 
 const NUM_CAKE_LAYERS = 3; // Base, Layer1, Frosting
