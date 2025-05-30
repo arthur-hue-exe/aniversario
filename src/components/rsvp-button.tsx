@@ -12,7 +12,7 @@ export default function RsvpButton() {
   }, []);
 
   const handleRsvp = () => {
-    const phoneNumber = "+1234567890"; // Substitua pelo número real do WhatsApp
+    const phoneNumber = "5562991910621"; // Número do WhatsApp atualizado
     const message = encodeURIComponent("Adoraria ir ao aniversário do Weverson!");
     window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
   };
