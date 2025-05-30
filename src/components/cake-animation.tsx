@@ -3,11 +3,18 @@
 
 import { useEffect, useState } from 'react';
 
+// Posições ajustadas para 3 velas, com a do meio deslocada 99px para a direita do centro do bolo.
+// As outras duas velas ficam a 5px de distância da vela central.
+// Largura da vela (w-2 ou md:w-3) é ~8px ou ~12px. Metade disso é 4px ou 6px.
+// Vela central: calc(50% + 99px)
+// Vela esquerda: calc(50% + 99px - (md?6:4)px - 5px - (md?6:4)px) = calc(50% + 99px - (md?12:8)px - 5px) -> calc(50% + 86px) para md, calc(50% + 86px) para sm
+// Vela direita: calc(50% + 99px + (md?6:4)px + 5px + (md?6:4)px) = calc(50% + 99px + (md?12:8)px + 5px) -> calc(50% + 112px) para md, calc(50% + 112px) para sm
 const candleHorizontalPositions = [
-  { leftClass: 'left-[calc(50%+86px)] -translate-x-1/2' }, // Adjusted: 79px + 7px
-  { leftClass: 'left-[calc(50%+99px)] -translate-x-1/2' }, // Adjusted: 92px + 7px
-  { leftClass: 'left-[calc(50%+112px)] -translate-x-1/2' }, // Adjusted: 105px + 7px
+  { leftClass: 'left-[calc(50%+86px)] -translate-x-1/2' }, 
+  { leftClass: 'left-[calc(50%+99px)] -translate-x-1/2' }, 
+  { leftClass: 'left-[calc(50%+112px)] -translate-x-1/2' },
 ];
+
 
 const NUM_CAKE_LAYERS = 3; // Base, Layer1, Frosting
 
@@ -37,11 +44,13 @@ export default function CakeAnimation() {
   }, [clientRendered]);
 
   if (!clientRendered) {
-    return <div className="h-64 w-64 md:h-80 md:w-80 flex items-center justify-center"><p>Carregando bolo...</p></div>;
+    // Placeholder for server render or before client hydration
+    return <div className="h-56 w-56 md:h-72 md:w-64 flex items-center justify-center"><p>Carregando bolo...</p></div>;
   }
 
   return (
-    <div className="relative block mx-auto w-48 h-48 md:w-60 md:h-60 mt-8 md:mt-12 animate__animated animate__zoomIn">
+    // Ajustado w- e h- para conter os elementos, e removido mt-
+    <div className="relative block mx-auto w-56 h-56 md:w-64 md:h-72 animate__animated animate__zoomIn">
       {/* Cake Base */}
       {currentStep > 0 && (
         <div
@@ -70,6 +79,8 @@ export default function CakeAnimation() {
       {currentStep > NUM_CAKE_LAYERS && candleHorizontalPositions.map((pos, index) => (
         <div 
           key={`candle-${index}`} 
+          // As velas são posicionadas em relação ao fundo do contêiner da animação do bolo.
+          // A cobertura do bolo (cake-frosting) também é posicionada em relação a este mesmo fundo.
           className={`absolute bottom-[152px] md:bottom-[200px] ${pos.leftClass} w-2 h-8 md:w-3 md:h-10 bg-primary rounded-t-sm animate__animated animate__fadeInUp`}
         >
           {/* Flames */}
