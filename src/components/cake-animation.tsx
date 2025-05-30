@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useEffect, useState } from 'react';
@@ -45,12 +44,16 @@ export default function CakeAnimation() {
 
   if (!clientRendered) {
     // Placeholder for server render or before client hydration
-    return <div className="h-56 w-56 md:h-72 md:w-64 flex items-center justify-center"><p>Carregando bolo...</p></div>;
+    // Increased width to md:w-[360px] to accommodate candles shifted to the right
+    // Added relative positioning and left shift to match the main component
+    return <div className="relative h-72 w-full md:w-[360px] md:h-80 flex items-center justify-center left-[-100px]"><p>Carregando bolo...</p></div>;
   }
 
   return (
-    // Ajustado w- e h- para conter os elementos, e removido mt-
-    <div className="relative block mx-auto w-56 h-56 md:w-64 md:h-72 animate__animated animate__zoomIn">
+    // Ajustado w- e h- para conter os elementos.
+    // Aumentada a largura (md:w-[360px]) para garantir que as velas deslocadas à direita sejam visíveis e o conjunto possa ser centralizado.
+    // Adicionado left-[-100px] para mover o conjunto 100px para a esquerda.
+    <div className="relative block mx-auto w-full h-72 md:w-[360px] md:h-80 animate__animated animate__zoomIn left-[-100px]">
       {/* Cake Base */}
       {currentStep > 0 && (
         <div
