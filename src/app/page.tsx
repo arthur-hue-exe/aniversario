@@ -10,7 +10,9 @@ export default function BirthdayPage() {
       <div className="z-10 flex flex-col items-center space-y-8 md:space-y-12 text-center max-w-2xl w-full">
         <InvitationCard />
         <CakeAnimation />
-        <RsvpButton />
+        <div className="transform -translate-y-[40px]">
+          <RsvpButton />
+        </div>
       </div>
     </main>
   );
