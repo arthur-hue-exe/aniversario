@@ -15,7 +15,7 @@ const Balloon: React.FC<BalloonProps> = ({ style, colorClass }) => {
       style={style}
     >
       <div 
-        className="absolute bottom-[-10px] left-1/2 -translate-x-1/2 w-[2px] h-[30px] bg-foreground/30" 
+        className="absolute bottom-[-10px] left-1/2 -translate-x-1/2 w-[2px] bg-foreground/30" 
         style={{ height: `${(style.width as number) * 1.5}px`}} // String length relative to balloon size
       />
     </div>
@@ -24,11 +24,11 @@ const Balloon: React.FC<BalloonProps> = ({ style, colorClass }) => {
 
 
 const balloonColors = [
-  'bg-primary/70', // Vibrant Pink
-  'bg-accent/70',   // Pale Yellow
-  'bg-blue-300/70', // Light Blue
-  'bg-pink-300/70', // Another Pink
-  'bg-yellow-300/70', // Another Yellow
+  'bg-primary/70', 
+  'bg-accent/70',   
+  'bg-secondary/70', 
+  'bg-muted/70', 
+  'bg-slate-500/70', // Neutral gray
 ];
 
 const generateBalloon = (id: number): BalloonProps => {
