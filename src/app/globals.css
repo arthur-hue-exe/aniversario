@@ -175,6 +175,7 @@ body {
   left: 50%;
   transform: translateX(-50%);
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin: 48px 216px 0px;
 }
 
 .cake-layer1 {
@@ -188,6 +189,7 @@ body {
   left: 50%;
   transform: translateX(-50%);
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin: 48px 216px 0px;
 }
 
 .cake-frosting {
@@ -201,21 +203,25 @@ body {
   left: 50%;
   transform: translateX(-50%);
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin: 48px 216px 0px;
 }
 
 @media (min-width: 768px) { /* md breakpoint */
   .cake-base {
     width: 224px; /* w-56 equivalent */
     height: 80px; /* h-20 equivalent */
+    margin: 48px 216px 0px;
   }
   .cake-layer1 {
     width: 208px; /* w-52 equivalent */
     height: 64px; /* h-16 equivalent */
     bottom: 80px; /* md: Height of cake-base */
+    margin: 48px 216px 0px;
   }
   .cake-frosting {
     width: 192px; /* w-48 equivalent */
     height: 56px; /* h-14 equivalent */
     bottom: 144px; /* md: Height of cake-base + cake-layer1 */
+    margin: 48px 216px 0px;
   }
 }
