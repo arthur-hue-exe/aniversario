@@ -175,11 +175,11 @@ body {
   left: 50%;
   transform: translateX(-50%);
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  margin: 48px 216px 0px;
+  margin: 48px 0 0; /* Centering handled by left/transform, removed 216px horizontal margins */
 }
 
 .cake-layer1 {
-  width: 160px; /* w-40 equivalent */
+  width: 176px; /* w-44 equivalent, same as base */
   height: 48px; /* h-12 equivalent */
   background-color: hsl(var(--accent));
   border: 2px solid hsl(var(--foreground));
@@ -189,39 +189,41 @@ body {
   left: 50%;
   transform: translateX(-50%);
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  margin: 48px 216px 0px;
+  margin: 48px 0 0; /* Centering handled by left/transform, removed 216px horizontal margins */
 }
 
 .cake-frosting {
-  width: 144px; /* w-36 equivalent */
+  width: 176px; /* w-44 equivalent, same as base */
   height: 40px; /* h-10 equivalent */
   background-color: hsl(var(--primary));
   border: 2px solid hsl(var(--foreground));
   border-radius: 6px 6px 10px 10px; /* Slightly more rounded top for frosting */
   position: absolute;
-  bottom: 112px; /* Height of cake-base + cake-layer1 */
+  bottom: 111px; /* Adjusted: base_h(64) + layer1_h(48) - 1px_gap = 111px */
   left: 50%;
   transform: translateX(-50%);
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  margin: 48px 216px 0px;
+  margin: 48px 0 0; /* Centering handled by left/transform, removed 216px horizontal margins */
 }
 
 @media (min-width: 768px) { /* md breakpoint */
   .cake-base {
     width: 224px; /* w-56 equivalent */
     height: 80px; /* h-20 equivalent */
-    margin: 48px 216px 0px;
+    margin: 48px 0 0;
   }
   .cake-layer1 {
-    width: 208px; /* w-52 equivalent */
+    width: 224px; /* w-56 equivalent, same as base */
     height: 64px; /* h-16 equivalent */
     bottom: 80px; /* md: Height of cake-base */
-    margin: 48px 216px 0px;
+    margin: 48px 0 0;
   }
   .cake-frosting {
-    width: 192px; /* w-48 equivalent */
+    width: 224px; /* w-56 equivalent, same as base */
     height: 56px; /* h-14 equivalent */
-    bottom: 144px; /* md: Height of cake-base + cake-layer1 */
-    margin: 48px 216px 0px;
+    bottom: 143px; /* Adjusted: md_base_h(80) + md_layer1_h(64) - 1px_gap = 143px */
+    margin: 48px 0 0;
   }
 }
+
+    
