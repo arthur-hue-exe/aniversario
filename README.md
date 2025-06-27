@@ -1,1 +1,1 @@
-Projeto inicial com next
+Projeto inicial de convite animado
